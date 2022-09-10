@@ -23,9 +23,14 @@ namespace Value_and_Reference_Types_Exercise_01
 
             // TODO: Write out each of these to the Conosle like so:
             // Console.WriteLine($"Before: {yourVariable}");
-
+            Console.WriteLine($"Before: {myDouble}");
+            Console.WriteLine($"Before: {myInteger}");
+            Console.WriteLine($"Before: {myString}");
             // TODO: Use the ChangeValueType() function to "change the value type" for each variable
             // ChangeValueType(yourVariable);
+            ChangeValueType(myDouble);
+            ChangeValueType(myInteger);
+            ChangeValueType(myString);
 
             AddSmallBreak();
 
@@ -34,11 +39,17 @@ namespace Value_and_Reference_Types_Exercise_01
             // TODO: Integer variable value = ?
             // TODO: String variable value = ?
 
-            // Why:
+            // Why: ?
             // Answer: ?
+                /*The variables will all stay their original values. If we wanted to save the updated values, we would need to format it like
+                myDouble = ChangeValueType(myDouble); as it is, it just returns a new value but doesn't use it. The method has created
+                a copy of the original value without affecting the original value.*/
 
             // TODO: Write out the variable to the console after being passed through the ChangeValueType() function
             // Console.WriteLine($"Adjusted: {yourVariable}");
+            Console.WriteLine($"Adjusted: {myDouble}");
+            Console.WriteLine($"Adjusted: {myInteger}");
+            Console.WriteLine($"Adjusted: {myString}");
 
             #endregion
 
@@ -53,9 +64,26 @@ namespace Value_and_Reference_Types_Exercise_01
             Dog myDogObject = new Dog { name = "Lassy" };
 
             // TODO: Write out each of these to the Conosle. Remember to use a loop for the list and array!
+            Console.WriteLine($"StringBuilder's starting string: {sb}");
+            Console.Write("List's starting value: ");
+            for (int x = 0; x < myList.Count; x++)
+            {
+                Console.Write(x + " ");
+            }
+            Console.Write("\nArray's starting value: ");
+            for (int x = 0; x < myArray.Length; x++)
+            {
+                Console.Write(x + " ");
+            }
+            Console.WriteLine($"\nDog's current name: {myDogObject.name}\n");
 
+            AddSmallBreak();
 
             // TODO: Use the ChangeReferenceType() function to "change the reference" for each variable
+            ChangeReferenceType(sb);
+            ChangeReferenceType(myList);
+            ChangeReferenceType(myArray);
+            ChangeReferenceType(myDogObject);
 
             // Thought Experiment: What will the value of the original variable be after going through the ChangeReferenceType() method?
             // TODO: StringBuilder variable value = ?
@@ -63,12 +91,28 @@ namespace Value_and_Reference_Types_Exercise_01
             // TODO: int[] variable values = ?
             // TODO: Dog object variable's name = ?
 
-            // Why:
+            // Why: 
             // Answer: ?
+                /*The stringbuilder will be "The ending string's value." The list will be (100, 200, 300). The array will be (400, 500, 600).
+                The dog's name will be changed to "A changed name". When altering a reference value, you're making changes to the original.
 
+                Alright, I was wrong about the list and the array. The original list and array retained their original values. I admit, I have
+                no clue why.
+                */
 
             // TODO: Write out the adjusted variables to the console after being passed through the ChangeReferenceType() function
-
+            Console.WriteLine($"StringBuilder's ending string: {sb}");
+            Console.Write("List's ending value: ");
+            for (int x = 0; x < myList.Count; x++)
+            {
+                Console.Write(x + " ");
+            }
+            Console.Write("\nArray's ending value: ");
+            for (int x = 0; x < myArray.Length; x++)
+            {
+                Console.Write(x + " ");
+            }
+            Console.WriteLine($"\nDog's changed name: {myDogObject.name}");
 
             #endregion
         }
